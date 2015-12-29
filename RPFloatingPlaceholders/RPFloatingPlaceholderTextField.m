@@ -165,6 +165,8 @@
     
     // Set the background to a clear color
     self.backgroundColor = [UIColor clearColor];
+    
+    self.yOffset = 8;
 }
 
 - (void)setupDefaultColorStates {
@@ -295,16 +297,14 @@
 {
     [self.floatingLabel sizeToFit];
     
-    CGFloat offset = ceil(self.floatingLabel.font.lineHeight);
-    
     self.originalFloatingLabelFrame = CGRectMake(self.originalTextFieldFrame.origin.x + 5.f, self.originalTextFieldFrame.origin.y,
                                                  self.originalTextFieldFrame.size.width - 10.f, self.floatingLabel.frame.size.height);
     self.floatingLabel.frame = self.originalFloatingLabelFrame;
     
-    self.offsetFloatingLabelFrame = CGRectMake(self.originalFloatingLabelFrame.origin.x, self.originalFloatingLabelFrame.origin.y - offset,
+    self.offsetFloatingLabelFrame = CGRectMake(self.originalFloatingLabelFrame.origin.x, self.originalFloatingLabelFrame.origin.y - self.yOffset,
                                                self.originalFloatingLabelFrame.size.width, self.originalFloatingLabelFrame.size.height);
     
-    self.offsetTextFieldFrame = CGRectMake(self.originalTextFieldFrame.origin.x, self.originalTextFieldFrame.origin.y + offset,
+    self.offsetTextFieldFrame = CGRectMake(self.originalTextFieldFrame.origin.x, self.originalTextFieldFrame.origin.y + self.yOffset,
                                            self.originalTextFieldFrame.size.width, self.originalTextFieldFrame.size.height);
 }
 

@@ -47,4 +47,11 @@
  */
 @property (nonatomic, strong) UIColor *defaultPlaceholderColor;
 
+/**
+ The y-distance between textLabel and floatingLabel
+ 
+ @discussion Note: 8 is used by default.
+ */
+@property (nonatomic) CGFloat yOffset;
+
 @end
