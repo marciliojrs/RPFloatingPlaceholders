@@ -299,7 +299,6 @@
     
     self.originalFloatingLabelFrame = CGRectMake(self.originalTextFieldFrame.origin.x + 5.f, self.originalTextFieldFrame.origin.y,
                                                  self.originalTextFieldFrame.size.width - 10.f, self.floatingLabel.frame.size.height);
-    self.floatingLabel.frame = self.originalFloatingLabelFrame;
     
     self.offsetFloatingLabelFrame = CGRectMake(self.originalFloatingLabelFrame.origin.x, self.originalFloatingLabelFrame.origin.y - self.yOffset,
                                                self.originalFloatingLabelFrame.size.width, self.originalFloatingLabelFrame.size.height);
