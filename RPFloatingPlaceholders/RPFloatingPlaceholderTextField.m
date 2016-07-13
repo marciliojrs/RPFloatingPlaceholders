@@ -239,6 +239,8 @@
 
 - (void)showFloatingLabelWithAnimation:(BOOL)isAnimated
 {
+    [self adjustFramesForNewPlaceholder];
+    
     // Add it to the superview
     if (self.floatingLabel.superview != self.superview) {
         [self.superview addSubview:self.floatingLabel];
@@ -298,7 +300,7 @@
     [self.floatingLabel sizeToFit];
     
     self.originalFloatingLabelFrame = CGRectMake(self.originalTextFieldFrame.origin.x + 5.f, self.originalTextFieldFrame.origin.y,
-                                                 self.originalTextFieldFrame.size.width - 10.f, self.floatingLabel.frame.size.height);
+                                                 self.frame.size.width - 10.f, self.floatingLabel.frame.size.height);
     
     self.offsetFloatingLabelFrame = CGRectMake(self.originalFloatingLabelFrame.origin.x, self.originalFloatingLabelFrame.origin.y - self.yOffset,
                                                self.originalFloatingLabelFrame.size.width, self.originalFloatingLabelFrame.size.height);
