@@ -190,10 +190,7 @@
 {
     [super layoutSubviews];
     
-    // Check if we need to redraw for pre-existing text
-    if (![self isFirstResponder]) {
-        [self checkForExistingText];
-    }
+    [self checkForExistingText];
 }
 
 - (void)drawRect:(CGRect)aRect
@@ -299,7 +296,7 @@
 {
     [self.floatingLabel sizeToFit];
     
-    self.originalFloatingLabelFrame = CGRectMake(self.originalTextFieldFrame.origin.x + 5.f, self.originalTextFieldFrame.origin.y,
+    self.originalFloatingLabelFrame = CGRectMake(self.originalTextFieldFrame.origin.x + 5.f, self.frame.origin.y,
                                                  self.frame.size.width - 10.f, self.floatingLabel.frame.size.height);
     
     self.offsetFloatingLabelFrame = CGRectMake(self.originalFloatingLabelFrame.origin.x, self.originalFloatingLabelFrame.origin.y - self.yOffset,
