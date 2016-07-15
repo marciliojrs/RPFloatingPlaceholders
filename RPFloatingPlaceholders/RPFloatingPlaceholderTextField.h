@@ -54,4 +54,11 @@
  */
 @property (nonatomic) CGFloat yOffset;
 
+/**
+ Left padding for placeholder text.
+ 
+ @discussion Note: 5.0f is used by default.
+ */
+@property (nonatomic) CGFloat leftPaddingForPlaceholder;
+
 @end
